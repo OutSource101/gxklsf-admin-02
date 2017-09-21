@@ -51,6 +51,7 @@ export const asyncRouterMap = [
     path: '/memberManger',
     component: Layout,
     redirect: 'noredirect',
+    icon: 'xinrenzhinan',
     name: '会员管理',
     children: [
       { path: 'user', name: '用户管理', component: _import('user/index'), meta: { role: ['admin'] }},
@@ -61,6 +62,7 @@ export const asyncRouterMap = [
     path: '/oddsManger',
     component: Layout,
     redirect: 'noredirect',
+    icon: 'tubiao',
     name: '赔率管理',
     children: [
       { path: 'setHandicap', name: '会员盘口设置', component: _import('odds/set'), meta: { role: ['admin'] }},
@@ -71,6 +73,7 @@ export const asyncRouterMap = [
     path: '/finance',
     component: Layout,
     redirect: 'noredirect',
+    icon: 'table',
     name: '财务报表',
     children: [
       { path: 'history', name: '历史开奖结果', component: _import('user/index'), meta: { role: ['admin'] }},
@@ -85,6 +88,7 @@ export const asyncRouterMap = [
     path: '/setting',
     component: Layout,
     redirect: 'noredirect',
+    icon: 'quanxian',
     name: '系统设置',
     children: [
       { path: 'type', name: '彩种管理', component: _import('setting/type'), meta: { role: ['admin'] }},
