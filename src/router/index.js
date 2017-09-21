@@ -58,13 +58,13 @@ export const asyncRouterMap = [
     ]
   },
   {
-    path: '/oddManger',
+    path: '/oddsManger',
     component: Layout,
     redirect: 'noredirect',
     name: '赔率管理',
     children: [
-      { path: 'setHandicap', name: '会员盘口设置', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'odds', name: '快乐十分赔率', component: _import('user/index'), meta: { role: ['admin'] }}
+      { path: 'setHandicap', name: '会员盘口设置', component: _import('odds/set'), meta: { role: ['admin'] }},
+      { path: 'odds', name: '快乐十分赔率', component: _import('odds/set'), meta: { role: ['admin'] }}
     ]
   },
   {
@@ -74,11 +74,11 @@ export const asyncRouterMap = [
     name: '财务报表',
     children: [
       { path: 'history', name: '历史开奖结果', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'memberSearch', name: '会员投注查询', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'memberTable', name: '会员账户报表', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'memberStream', name: '会员账户流水', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'cancelSearch', name: '取消投注查询', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'deleteSearch', name: '会员删除注单', component: _import('user/index'), meta: { role: ['admin'] }}
+      { path: 'memberSearch', name: '会员投注查询', component: _import('finance/memberSearch'), meta: { role: ['admin'] }},
+      { path: 'memberTable', name: '会员账户报表', component: _import('finance/memberTable'), meta: { role: ['admin'] }},
+      { path: 'memberStream', name: '会员账户流水', component: _import('finance/memberStream'), meta: { role: ['admin'] }},
+      { path: 'cancelSearch', name: '取消投注查询', component: _import('finance/cancelSearch'), meta: { role: ['admin'] }},
+      { path: 'deleteSearch', name: '会员删除注单', component: _import('finance/deleteSearch'), meta: { role: ['admin'] }}
     ]
   },
   {
@@ -87,8 +87,8 @@ export const asyncRouterMap = [
     redirect: 'noredirect',
     name: '系统设置',
     children: [
-      { path: 'type', name: '彩种管理', component: _import('user/index'), meta: { role: ['admin'] }},
-      { path: 'changePsd', name: '密码修改', component: _import('user/index'), meta: { role: ['admin'] }},
+      { path: 'type', name: '彩种管理', component: _import('setting/type'), meta: { role: ['admin'] }},
+      { path: 'changePwd', name: '密码修改', component: _import('setting/changePwd'), meta: { role: ['admin'] }},
       { path: 'rule', name: '游戏规则', component: _import('user/index'), meta: { role: ['admin'] }}
     ]
   },
