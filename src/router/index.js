@@ -76,7 +76,7 @@ export const asyncRouterMap = [
     icon: 'table',
     name: '财务报表',
     children: [
-      { path: 'history', name: '历史开奖结果', component: _import('user/index'), meta: { role: ['admin'] }},
+      { path: 'history', name: '历史开奖结果', component: _import('finance/history'), meta: { role: ['admin'] }},
       { path: 'memberSearch', name: '会员投注查询', component: _import('finance/memberSearch'), meta: { role: ['admin'] }},
       { path: 'memberTable', name: '会员账户报表', component: _import('finance/memberTable'), meta: { role: ['admin'] }},
       { path: 'memberStream', name: '会员账户流水', component: _import('finance/memberStream'), meta: { role: ['admin'] }},
