@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-select v-model="value" placeholder="用户">
+    <el-select v-model="listQuery.value" placeholder="用户">
       <el-option
         v-for="item in listQuery.options"
         :key="item.value"
@@ -58,7 +58,8 @@ export default {
         }, {
           value: '选项2',
           label: 'admin'
-        }]
+        }],
+        value: ''
       }
     }
   },
