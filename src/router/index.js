@@ -42,8 +42,8 @@ export const asyncRouterMap = [
     name: '开奖管理',
     icon: 'zujian',
     children: [
-      { path: 'history', name: '快乐十分期数查询', icon: 'zonghe', component: _import('lottery/index') },
-      { path: 'supplement', name: '快乐十分补录期数', icon: 'zonghe', component: _import('lottery/index2') }
+      { path: 'history', name: '快乐十分期数查询', component: _import('lottery/index') },
+      { path: 'supplement', name: '快乐十分补录期数', component: _import('lottery/index2') }
     ]
   },
 
@@ -93,7 +93,7 @@ export const asyncRouterMap = [
     children: [
       { path: 'type', name: '彩种管理', component: _import('setting/type'), meta: { role: ['admin'] }},
       { path: 'changePwd', name: '密码修改', component: _import('setting/changePwd'), meta: { role: ['admin'] }},
-      { path: 'rule', name: '游戏规则', component: _import('user/index'), meta: { role: ['admin'] }}
+      { path: 'rule', name: '游戏规则', component: _import('setting/rule'), meta: { role: ['admin'] }}
     ]
   },
 
