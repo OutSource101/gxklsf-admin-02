@@ -1,29 +1,66 @@
 <template>
   <div class="login-container">
-    <el-form autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px"
-      class="card-box login-form">
-      <h3 class="title">系统登录</h3>
-       <el-form-item prop="username">
-        <span class="svg-container svg-container_login">
-          <icon-svg icon-class="yonghuming" />
-        </span>
-        <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="邮箱" />
-      </el-form-item>
-      <el-form-item prop="password">
-        <span class="svg-container">
-          <icon-svg icon-class="mima" ></icon-svg>
-        </span>
-        <el-input name="password" type="password" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"
-          placeholder="密码"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">
-          登录
-        </el-button>
-      </el-form-item>
-      <div class='tips'>账号:admin 密码随便填</div>
-      <div class='tips'>账号:editor  密码随便填</div>
-    </el-form>
+      <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h2 style="margin:150px 0 20px 0;"><span class="red strong"><img src="/static/images/logos.png" width="400" height="40"></span></h2>
+          <el-form autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px"
+                   class="form-horizontal">
+            <div class="form-group">
+              <label for="username" class="col-md-2 control-label">用户名：</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="username" name="username" v-model="loginForm.username">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-md-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control" name="password" id="password" v-model="loginForm.password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="VerifyCode" class="col-md-2 control-label">验证码：</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="VerifyCode" name="VerifyCode">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label"></label>
+              <div class="col-md-8">
+                <img src="" alt="" class="vimg">&nbsp;&nbsp;<span><a href="javascript:;" id="averify" class="c_lan">换一张</a></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-3 col-md-8">
+                <button type="button" class="btn btn-primary" @click="handleLogin"><span class="glyphicon glyphicon-log-in"></span> 登录</button>
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span> 取消</button>
+              </div>
+            </div>
+          </el-form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <!--<h3 class="title">系统登录</h3>-->
+       <!--<el-form-item prop="username">-->
+        <!--<span class="svg-container svg-container_login">-->
+          <!--<icon-svg icon-class="yonghuming" />-->
+        <!--</span>-->
+        <!--<el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="邮箱" />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item prop="password">-->
+        <!--<span class="svg-container">-->
+          <!--<icon-svg icon-class="mima" ></icon-svg>-->
+        <!--</span>-->
+        <!--<el-input name="password" type="password" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"-->
+          <!--placeholder="密码"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item>-->
+        <!--<el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">-->
+          <!--登录-->
+        <!--</el-button>-->
+      <!--</el-form-item>-->
+      <!--<div class='tips'>账号:admin 密码随便填</div>-->
+      <!--<div class='tips'>账号:editor  密码随便填</div>-->
   </div>
 </template>
 
@@ -89,19 +126,10 @@ export default {
   .login-container {
     @include relative;
     height: 100vh;
-    background-color: $bg;
+    background-color: #ddd;
     input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;
       -webkit-text-fill-color: #fff !important;
-    }
-    input {
-      background: transparent;
-      border: 0px;
-      -webkit-appearance: none;
-      border-radius: 0px;
-      padding: 12px 5px 12px 15px;
-      color: $light_gray;
-      height: 47px;
     }
     .el-input {
       display: inline-block;
